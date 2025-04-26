@@ -1,0 +1,232 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    height: 100%;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Container */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Navigation */
+  header {
+    background: #0d47a1;
+    color: white;
+    padding: 1rem 0;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #ffca28;
+  }
+  
+  /* Theme toggle button */
+  .theme-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .theme-toggle:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Main Grid Layout */
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .grid-layout {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+    width: 100%;
+  }
+  
+  @media (min-width: 768px) {
+    .grid-layout {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Card */
+  .card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    animation: fadeIn 0.7s ease-in-out;
+  }
+  
+  /* Contact Form */
+  form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0d47a1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  form button:hover {
+    background-color: #1565c0;
+  }
+  
+  .form-message {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* To-Do List */
+  .todo-controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .todo-controls input {
+    flex: 1;
+  }
+  
+  .todo-controls button {
+    padding: 12px 20px;
+  }
+  
+  .todo-list {
+    list-style: none;
+  }
+  
+  .todo-list li {
+    background: #e3f2fd;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .todo-list li:hover {
+    background: #bbdefb;
+  }
+  
+  .empty-state {
+    text-align: center;
+    color: #888;
+    margin-top: 1rem;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: #0d47a1;
+    color: white;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+  }
+  
+  /* Smooth theme transitions */
+  body, header, footer, .card, .todo-list li, input, textarea {
+    transition: background 0.5s, color 0.5s;
+  }
+  
+  /* Dark Mode */
+  .dark {
+    background: #121212;
+    color: #e0e0e0;
+  }
+  
+  .dark header,
+  .dark footer {
+    background: #1f1f1f;
+  }
+  
+  .dark .card {
+    background: #1e1e1e;
+  }
+  
+  .dark input,
+  .dark textarea {
+    background: #2c2c2c;
+    border: 1px solid #555;
+    color: #ddd;
+  }
+  
+  .dark .todo-list li {
+    background: #2c2c2c;
+  }
+  
+  .dark .todo-list li:hover {
+    background: #3c3c3c;
+  }
+  
+  .dark .empty-state {
+    color: #aaa;
+  }
+  
